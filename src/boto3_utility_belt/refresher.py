@@ -58,7 +58,7 @@ class RefreshHandler(BaseHTTPRequestHandler):
         print("Waiting for credential refresh requests")
 
 
-if __name__ == "__main__":
+def creds_refresher():
     try:
         print("Waiting for credential refresh requests")
         web_server = RefreshServer(("127.0.0.1", 10100), RefreshHandler)
@@ -66,3 +66,7 @@ if __name__ == "__main__":
     except socket.error:
         print("Failed to start the credential refresher on required TCP port 10100")
         sys.exit(1)
+
+
+if __name__ == "__main__":
+    creds_refreshser()
